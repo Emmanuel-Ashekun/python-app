@@ -11,7 +11,7 @@ def details():
         {
             'hostname': socket.gethostname(),
             'time': datetime.datetime.now().strftime("%I:%M:%S%p  on %B %d, %Y"),
-            'message': 'bruv'
+            'message': 'bruv!'
         }
     )
 
