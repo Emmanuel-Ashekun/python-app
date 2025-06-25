@@ -37,7 +37,7 @@ jobs:
         uses: clowdhaus/argo-cd-action/@main
         with:
           version:  2.6.7
-          run: |
+          command: |
             argocd login https://argo-argocd-server.argo \ 
             --insecure \
             --grpc-web \
