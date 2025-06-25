@@ -27,12 +27,30 @@ jobs:
           push: true
           tags: |
             ashekun/python-app:${{ env.short_sha }}
+    outputs:
+      commit_id: ${{ env.short_sha }}
 
   
   cd:
     needs: ci
     runs-on: self-hosted
     steps:
+      - uses: actions/checkout@v3
+
+
+      - name: modify values file
+        shell: bash
+        run: |
+          echo ${{ needs.ci.outputs.commit_id }} 
+          pip install yq
+          yq -Yi '.image.tag = "${{ needs.ci.outputs.commit_id }}"' charts/python-app/values.yaml
+
+      - name: commit changes and push
+        uses: Endbug/add-and-commit@v9
+        with:
+          message: 'updates values.yml with commit ${{ needs.ci.outputs.commit_id }}'
+          
+
       - name: login argocd
         uses: clowdhaus/argo-cd-action/@main
         with:
