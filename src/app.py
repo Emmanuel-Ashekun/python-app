@@ -5,13 +5,14 @@ import datetime
 import socket
 
 
-@app.route("/api/v1/details")
+@app.route("/api/v1/info")
 def details():
     return jsonify(
         {
             'hostname': socket.gethostname(),
             'time': datetime.datetime.now().strftime("%I:%M:%S%p  on %B %d, %Y"),
-            'message': 'bruv!!'
+            'message': 'bruv!!',
+            'deployed_on': 'kubernetes'
         }
     )
 
