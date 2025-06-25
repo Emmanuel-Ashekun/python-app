@@ -37,15 +37,16 @@ jobs:
         uses: clowdhaus/argo-cd-action/@main
         with:
           version:  2.6.7
-          command: |
-            argocd login argo-argocd-server.argo \ 
-              --insecure \
-              --grpc-web \
+          command: login
+          options:
               --username ${{ vars.ARGOCD_USERNAME }} \
               --password ${{ secrets.ARGOCD_PASSWORD }}
+              --insecure \
+              --grpc-web \
+              argo-argocd-server.argo \ 
       - name: sync argocd
         uses: clowdhaus/argo-cd-action/@main 
         with:
           version: 2.6.7
-          command: |
-            argocd app sync python-app
+          command: app sync
+          options: python-app
