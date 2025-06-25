@@ -39,10 +39,12 @@ jobs:
           version:  2.6.7
           command: |
             login https://argo-argocd-server.argo \ 
-            --insecure \
-            --grpc-web \
-            --username ${{ vars.ARGOCD_USERNAME }} \
-            --password ${{ secrets.ARGOCD_PASSWORD }}
-            argocd app sync python-app
+              --insecure \
+              --grpc-web \
+              --username ${{ vars.ARGOCD_USERNAME }} \
+              --password ${{ secrets.ARGOCD_PASSWORD }}
+
+
+            app sync python-app
          
           
