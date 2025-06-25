@@ -33,7 +33,7 @@ jobs:
     needs: ci
     runs-on: self-hosted
     steps:
-      - name: sync argocd app
+      - name: login argocd
         uses: clowdhaus/argo-cd-action/@main
         with:
           version:  2.6.7
@@ -43,8 +43,9 @@ jobs:
               --grpc-web \
               --username ${{ vars.ARGOCD_USERNAME }} \
               --password ${{ secrets.ARGOCD_PASSWORD }}
-
-
+      - name: sync argocd
+        uses: clowdhaus/argo-cd-action/@main 
+        with:
+          version: 2.6.7
+          command: |
             app sync python-app
-         
-          
