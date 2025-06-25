@@ -38,7 +38,7 @@ jobs:
         with:
           version:  2.6.7
           command: |
-            login argo-argocd-server.argo \ 
+            argocd login argo-argocd-server.argo \ 
               --insecure \
               --grpc-web \
               --username ${{ vars.ARGOCD_USERNAME }} \
@@ -48,4 +48,4 @@ jobs:
         with:
           version: 2.6.7
           command: |
-            app sync python-app
+            argocd app sync python-app
