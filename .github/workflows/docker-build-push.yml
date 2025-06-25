@@ -38,7 +38,7 @@ jobs:
         with:
           version:  2.6.7
           command: |
-            login https://argo-argocd-server.argo \ 
+            login argo-argocd-server.argo \ 
               --insecure \
               --grpc-web \
               --username ${{ vars.ARGOCD_USERNAME }} \
