@@ -1,32 +1,21 @@
-
 replicaCount: 1
-
-
 image:
   repository: ashekun/python-app
   pullPolicy: IfNotPresent
-  tag: "8ef66d10"
-
+  tag: "4560ef9a"
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
-
 serviceAccount:
   create: false
   automount: true
   annotations: {}
   name: ""
-
-
 podSecurityContext: {}
 securityContext: {}
-
-
 service:
   type: ClusterIP
   port: 5000
-
-# This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
 ingress:
   enabled: true
   className: "nginx"
@@ -37,7 +26,6 @@ ingress:
           pathType: Prefix
   tls: []
 resources: {}
-
 livenessProbe:
   httpGet:
     path: /api/v1/health
@@ -46,13 +34,11 @@ readinessProbe:
   httpGet:
     path: /api/v1/health
     port: http
-
 autoscaling:
   enabled: false
   minReplicas: 1
   maxReplicas: 100
   targetCPUUtilizationPercentage: 80
-
 volumes: []
 volumeMounts: []
 nodeSelector: {}
