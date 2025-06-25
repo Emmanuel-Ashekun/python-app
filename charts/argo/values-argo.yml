@@ -15,7 +15,7 @@ applicationSet:
 
 
 global:
-  domain: emmanuels-macbook-air.local
+  domain: agro.test.com
   
 
 certificate:
@@ -29,3 +29,5 @@ server:
       nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
     ingressClassName: nginx
     tls: true
+    hosts:
+    - agro.test.com
