@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: ashekun/python-app
   pullPolicy: IfNotPresent
-  tag: "a0b3c1f8"
+  tag: "8e1619de"
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
