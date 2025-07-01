@@ -27,7 +27,7 @@ jobs:
       - name: Write public key to file
         run: echo "${{ secrets.COSIGN_PUBKEY }}" > cosign.pub
 
-        
+
       - name: Set short SHA
         id: vars
         run: echo "short_sha=$(echo ${{ github.sha }} | cut -c1-8)" >> $GITHUB_ENV
@@ -41,7 +41,7 @@ jobs:
   
       - name: sign container image
         run: |
-          cosign sign --key env://COSIGN_KEY docker.io/ashekun/python-app:${{ env.short_sha }}
+          cosign sign --key env://COSIGN_KEY --yes docker.io/ashekun/python-app:${{ env.short_sha }}
         shell: bash
         env: 
           COSIGN_KEY: ${{ secrets.COSIGN_KEY }}
