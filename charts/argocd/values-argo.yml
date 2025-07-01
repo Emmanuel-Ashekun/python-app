@@ -15,12 +15,10 @@ applicationSet:
 
 
 global:
-  domain: agro.test.com
-  
+  domain: argocd.test.com
 
 certificate:
   enabled: true
-
 
 server:
   ingress:
@@ -29,5 +27,3 @@ server:
       nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
     ingressClassName: nginx
     tls: true
-    hosts:
-    - agro.test.com
