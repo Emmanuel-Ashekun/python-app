@@ -28,4 +28,4 @@ if __name__ == "__main__":
 
 
 # '/api/v1/details'we
-# '/api/v1/healthassww
+# '/api/v1/healthasswwss
