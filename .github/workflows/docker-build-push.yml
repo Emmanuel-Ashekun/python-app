@@ -52,7 +52,7 @@ jobs:
         run: |
           docker buildx imagetools inspect ashekun/python-app:${{ env.short_sha }}
           docker pull ashekun/python-app:${{ env.short_sha }}
-          docker verify --key cosign.pub ashekun/python-app:${{ env.short_sha }}
+          cosign verify --key cosign.pub ashekun/python-app:${{ env.short_sha }}
 
     outputs:
       commit_id: ${{ env.short_sha }}
