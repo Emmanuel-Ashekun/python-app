@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: ashekun/python-app
   pullPolicy: IfNotPresent
-  tag: "a1293869"
+  tag: "306b4665"
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
@@ -11,26 +11,18 @@ serviceAccount:
   automount: true
   annotations: {}
   name: ""
-
-# This is for setting Kubernetes Annotations to a Pod.
-# For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
-podAnnotations: 
+podAnnotations:
   prometheus.io/scrape: "true"
   prometheus.io/path: "/metrics"
   prometheus.io/port: "5000"
-
-# This is for setting Kubernetes Labels to a Pod.
-# For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 podLabels: {}
 podSecurityContext: {}
 securityContext: {}
 service:
   type: ClusterIP
   port: 5000
-  labels: 
+  labels:
     app: python-app
-
-# This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
 ingress:
   enabled: true
   className: "nginx"
