@@ -26,8 +26,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Verify base image
         run: |
-          cosign dockerfile verify --base-image-only \
-           --key https://github.com/Emmanuel-Ashekun/python-app/Dockerfile
+          cosign dockerfile verify --base-image-only --key https://github.com/Emmanuel-Ashekun/python-app/Dockerfile
 
 
       - name: Set short SHA
