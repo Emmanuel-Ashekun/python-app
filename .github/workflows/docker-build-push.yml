@@ -23,7 +23,7 @@ jobs:
 
       - name: Verify base image
         run: |
-          cosign dockerfile verify --base-image-only --key https://github.com/GoogleContainerTools/distroless Dockerfile
+          cosign dockerfile verify --base-image-only --key https://github.com/Emmanuel-Ashekun/python-app Dockerfile
 
 
       - name: Set short SHA
