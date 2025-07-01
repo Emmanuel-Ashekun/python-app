@@ -11,9 +11,6 @@ serviceAccount:
   automount: true
   annotations: {}
   name: ""
-<<<<<<< HEAD
-podAnnotations: {}
-=======
 
 # This is for setting Kubernetes Annotations to a Pod.
 # For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
@@ -24,20 +21,16 @@ podAnnotations:
 
 # This is for setting Kubernetes Labels to a Pod.
 # For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
->>>>>>> 1b1f83f (updated to include monitoring)
 podLabels: {}
 podSecurityContext: {}
 securityContext: {}
 service:
   type: ClusterIP
   port: 5000
-<<<<<<< HEAD
-=======
   labels: 
     app: python-app
 
 # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
->>>>>>> 1b1f83f (updated to include monitoring)
 ingress:
   enabled: true
   className: "nginx"
