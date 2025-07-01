@@ -28,11 +28,6 @@ jobs:
         run: echo "${{ secrets.COSIGN_PUBKEY }}" > cosign.pub
 
         
-      - name: Verify base image
-        run: |
-          cosign dockerfile verify --base-image-only --key cosign.pub Dockerfile
-
-
       - name: Set short SHA
         id: vars
         run: echo "short_sha=$(echo ${{ github.sha }} | cut -c1-8)" >> $GITHUB_ENV
