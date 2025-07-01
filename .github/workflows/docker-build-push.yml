@@ -84,7 +84,7 @@ jobs:
         with:
           version:  2.6.7
           command: login
-          options: --username ${{ vars.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }} --insecure argo-argocd-server.argo 
+          options: --username ${{ vars.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }} --insecure argocd.test.com 
               
       - name: sync argocd
         uses: clowdhaus/argo-cd-action/@main 
